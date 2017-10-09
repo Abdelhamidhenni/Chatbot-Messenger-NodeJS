@@ -60,7 +60,7 @@ app.post('/webhook', function(req, res){
 
 function eventsTrigger(id, msg){
 
-	let Neuros = Neural;
+	const Neuros = Neural;
    	var m = msg.toLowerCase().trim();
   	if(m in Neuros){
   		sendTextMessage(id, Neural[m]);
@@ -103,7 +103,7 @@ function callSendApi(messageData){
 
 	request({
 		uri: "https://graph.facebook.com/v2.6/me/messages",
-		qs: { access_token: 'EAAGskQvlsxwBAOF14kHcbfOHty0iDdC6mIVxLYG4pQnIX5v3sBCUepw4Xr6B4YVMbzPjAOcbZA6yUfOQb1ncJbaI9ETUoB0zDkdAaNTVnlVjUSw5XczrmSZAwQjUUuWCx67bgvtj0EZBSq8XPyd9OfI0wfRGZC82vPIoKOiZAGAZDZD' },
+		qs: { access_token: 'EAAUuD5zW9uwBADZA13TI3LsoZAFMzvqewcdAtKhMVUezZC1prgf4DTbgGPINHZAaifmUFwAyX0S5ZBTsCmJ7hcZBpbklfMwmmUwCIw9yZA4SdbFWmxPS0KfVOsZCMYx88NLccCZABkjdfvQ8lh08BkKetyxfvGMqGnv5KExqMPPefXgZDZD' },
 		method: 'POST',
 		json: messageData
 	}, function (error, response, body) {
